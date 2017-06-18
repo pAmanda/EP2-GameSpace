@@ -12,7 +12,7 @@ public class Missile extends Sprite{
 	}
 
 	public void update(){
-		y -= 4;
+		y -= 5;
 	}
 
 	public void draw(Graphics2D g2D){

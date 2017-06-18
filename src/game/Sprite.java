@@ -8,4 +8,6 @@ public class Sprite {
 		this.x = x;
 		this.y = y;
 	}
+	
+	public void update(){}
 }

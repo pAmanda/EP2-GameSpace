@@ -52,7 +52,7 @@ public class SpaceShip extends Sprite{
 
 	public void KeyReleased(KeyEvent e){
 		int key = e.getKeyCode();
-
+		
 		if(key == KeyEvent.VK_W || key == KeyEvent.VK_UP){
 			velY = 0;
 
@@ -73,14 +73,15 @@ public class SpaceShip extends Sprite{
 			Enemy enemyTemp = enemies.get(i);
 			if(getBounds().intersects(enemyTemp.getBounds())){
 				GameFrame.removeEnemy(enemyTemp);
+				GameFrame.life--;
 			}
 		}
 		if(x < 0)	
 			x = 500;
 		if(x > 500)
 			x = 0;
-		if(y > 530)
-			y = 530;
+		if(y > 550)
+			y = 550;
 	}
 	
 	public Rectangle getBounds() {

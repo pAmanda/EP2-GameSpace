@@ -7,10 +7,10 @@ import javax.swing.ImageIcon;
 
 public class Enemy extends Sprite{
 	private int startY;
+	
 	public Enemy(int x, int y) {
 		super(x, y);
 		startY = y;
-		// TODO Auto-generated constructor stub
 	}
 	
 	public void update(){
@@ -24,7 +24,15 @@ public class Enemy extends Sprite{
 	}
 	
 	public Image getEnemyImage(){
+		
 		ImageIcon ic = new ImageIcon("imagens/alien_EASY.png");
+		
+		if(GameFrame.level == GameFrame.MEDIUM){
+			 ic = new ImageIcon("imagens/alien_MEDIUM.png");
+		}
+		if(GameFrame.level == GameFrame.HARD){
+			 ic = new ImageIcon("imagens/alien_HARD.png");
+		}
 		Image i = ic.getImage();
 		return i;	
 	}
@@ -35,6 +43,7 @@ public class Enemy extends Sprite{
 			if(getBounds().intersects(missile.getBounds())){
 				GameFrame.removeMissile(missile);
 				GameFrame.removeEnemy(this);
+				GameFrame.score++;
 			}
 		}
 	}
